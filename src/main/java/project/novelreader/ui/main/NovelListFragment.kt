@@ -2,6 +2,7 @@ package project.novelreader.ui.main
 
 import Chapter
 import Novel
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_novel_list.*
 import project.novelreader.R
+import project.novelreader.ui.info.ReaderActivity
 
 class NovelListFragment : Fragment() {
 
@@ -40,11 +42,15 @@ class NovelListFragment : Fragment() {
         prePopulate(20)
     }
 
-    fun showChapter(position: Int) {
+    fun showNovel(position: Int) {
         println("debug: showing ${novelList[position]}")
+        val readIntent = Intent(this.context, ReaderActivity::class.java).apply {
+            putExtra("novel_id", "1")
+        }
+        startActivity(readIntent)
     }
 
-    private fun prePopulate(n: Int) {
+    private fun prePopulate(n: Int = 10) {
         for (count in 0..n) {
             novelList.add(Novel(
                 "All Hail The King",
@@ -109,7 +115,7 @@ class NovelListAdapter(
         }
 
         override fun onClick(v: View?) {
-            novelListFragment.showChapter(adapterPosition)
+            novelListFragment.showNovel(adapterPosition)
         }
     }
 }
