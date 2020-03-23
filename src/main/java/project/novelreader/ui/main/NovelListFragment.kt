@@ -105,7 +105,7 @@ class NovelListAdapter(
 
     inner class ListItemHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
-        internal var title = view.findViewById<View>(R.id.novelTitle) as TextView
+        internal var title = view.findViewById<View>(R.id.infoTitle) as TextView
         internal var bookCover = view.findViewById<View>(R.id.novelBookCover) as ImageView
         internal var chapterCounter = view.findViewById<View>(R.id.novelChapterCounter) as TextView
 

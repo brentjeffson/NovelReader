@@ -8,15 +8,15 @@
     tools:context=".ui.info.NovelInfoFragment">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/infoBookCover"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/infoTitle"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/infoTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -36,11 +36,11 @@
         android:id="@+id/tabContainer"
         android:layout_width="0dp"
         android:layout_height="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/infoBookCover"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/infoBookCover"
+        app:layout_constraintTop_toBottomOf="@+id/infoTitle"
         app:layout_constraintVertical_bias="0.0">
 
         <com.google.android.material.tabs.TabItem
@@ -60,20 +60,20 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/chapterList"
+        app:layout_constraintBottom_toTopOf="@+id/chapterListRecycler"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/infoBookCover"
         app:layout_constraintTop_toBottomOf="@+id/tabContainer" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chapterList"
+        android:id="@+id/chapterListRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/infoBookCover"
         tools:itemCount="1000"
         tools:listitem="@layout/item_chapter" />
 </androidx.constraintlayout.widget.ConstraintLayout>
