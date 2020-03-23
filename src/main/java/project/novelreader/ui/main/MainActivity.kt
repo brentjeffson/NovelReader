@@ -1,8 +1,10 @@
 package project.novelreader.ui.main
 
+import Novel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -10,9 +12,12 @@ import project.novelreader.R
 
 class MainActivity : AppCompatActivity() {
 
+    private val tag = MainActivity::class.java.simpleName
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         initialize()
         setListeners()
     }

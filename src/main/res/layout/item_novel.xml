@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="124dp"
-    android:layout_height="140dp"
-    android:orientation="vertical">
+    android:layout_height="148dp"
+    android:orientation="vertical"
+    android:paddingBottom="8dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/novelBookCover" />
 
             <TextView
-                android:id="@+id/chapterCounter"
+                android:id="@+id/novelChapterCounter"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#3C3C3C"
