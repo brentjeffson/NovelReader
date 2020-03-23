@@ -21,7 +21,6 @@ import project.novelreader.ui.info.ReaderActivity
 class NovelListFragment : Fragment() {
 
     private val novelList = ArrayList<Novel>()
-//    private var novelListRecyclerView: RecyclerView? = null
     private var novelListAdapter: NovelListAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,13 +31,14 @@ class NovelListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //initialize views
         return inflater.inflate(R.layout.fragment_novel_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        novelListRecyclerView = view.findViewById<View>(R.id.novelListRecycler) as RecyclerView
-        setupNovelList()
+        //configure views
+        buildNovelRecycler()
         prePopulate(20)
     }
 
@@ -63,15 +63,13 @@ class NovelListFragment : Fragment() {
         }
         novelListAdapter!!.notifyDataSetChanged()
     }
-//SETUPS
-    private fun setupNovelList() {
+
+    private fun buildNovelRecycler() {
         novelListAdapter = NovelListAdapter(this, novelList)
-        val gridLayoutManager = GridLayoutManager(this.context, 3)
         novelListRecycler?.apply {
             itemAnimator = DefaultItemAnimator()
             addItemDecoration(DividerItemDecoration(this.context, GridLayoutManager.HORIZONTAL))
             adapter = novelListAdapter
-//            layoutManager = gridLayoutManager
         }
     }
 }
