@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import project.novelreader.R
 
-class NovelInfoFragment : Fragment() {
+class NovelInfoFragment(val novel_id: Int) : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,5 +19,9 @@ class NovelInfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_novel_info, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }
