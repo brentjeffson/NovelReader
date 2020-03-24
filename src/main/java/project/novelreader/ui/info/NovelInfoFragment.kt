@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_novel_info.*
 import kotlinx.android.synthetic.main.item_chapter.view.*
 import project.novelreader.R
 
-class NovelInfoFragment(val novel_id: Int) : Fragment() {
+class NovelInfoFragment(val novelUrl: String) : Fragment() {
 
     private var chapterAdapter: ChapterAdapter? = null
 

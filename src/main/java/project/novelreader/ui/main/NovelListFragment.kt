@@ -43,9 +43,8 @@ class NovelListFragment : Fragment() {
     }
 
     fun showNovel(position: Int) {
-        println("debug: showing ${novelList[position]}")
         val readIntent = Intent(this.context, ReaderActivity::class.java).apply {
-            putExtra("novel_id", "1")
+            putExtra("novel_url", novelList[position].url)
         }
         startActivity(readIntent)
     }
